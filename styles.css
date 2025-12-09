@@ -1,1 +1,103 @@
-/*  your css code here. If applicable */
+/* Basic Reset and Container Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 350px;
+}
+
+/* === Setup Screen Styling === */
+#name-form > div {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#name-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#name-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+#submit, #restart-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#submit:hover, #restart-button:hover {
+    background-color: #0056b3;
+}
+
+/* === Game Board Styling === */
+.message {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    min-height: 1.2em; /* Ensures element stays the same size */
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    background-color: #333; /* Gap color */
+}
+
+.cell {
+    background-color: #e2e2e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+.cell:hover {
+    background-color: #d1d1d1;
+}
+
+/* Specific styling for X and O */
+.cell.x {
+    color: #e74c3c; /* Reddish color for X */
+}
+
+.cell.o {
+    color: #3498db; /* Bluish color for O */
+}
+
+/* Utility Class */
+.hidden {
+    display: none;
+}

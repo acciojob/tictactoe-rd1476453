@@ -28,8 +28,8 @@ const restartButton = document.getElementById('restart-button');
 function startGame(event) {
     event.preventDefault(); // Stop the form from submitting normally (and refreshing)
 
-    const p1Input = document.getElementById('player1').value.trim();
-    const p2Input = document.getElementById('player2').value.trim();
+    const p1Input = document.getElementById('player-1').value.trim();
+    const p2Input = document.getElementById('player-2').value.trim();
     
     // Set player names, defaulting if inputs are empty
     player1Name = p1Input || 'Player X';
@@ -48,7 +48,7 @@ function startGame(event) {
         cell.classList.remove('x', 'o');
     });
     
-    updateMessage("harsh, you're up");
+    updateMessage(`${player1Name}, you're up`);
     restartButton.classList.add('hidden');
 }
 
@@ -84,7 +84,7 @@ function handleCellClick(event) {
     // 3. Check for win or draw
     if (checkWin()) {
         const winnerName = (currentPlayer === 'X') ? player1Name : player2Name;
-        updateMessage(`${winnerName} congratulations, you won!`);
+        updateMessage(`${winnerName}, congratulations you won!`);
         gameActive = false;
         restartButton.classList.remove('hidden');
     } else if (checkDraw()) {
@@ -95,7 +95,7 @@ function handleCellClick(event) {
         // 4. Switch turns
         currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
         const nextPlayerName = (currentPlayer === 'X') ? player1Name : player2Name;
-        updateMessage(`${nextPlayerName} (${currentPlayer}), you're up!`);
+        updateMessage(`${nextPlayerName}, you're up`);
     }
 }
 
@@ -141,7 +141,7 @@ function restartGame() {
     gameActive = true;
     
     // Update the message
-    updateMessage(`${player1Name} (X), you're up!`);
+    updateMessage(`${player1Name}, you're up`);
     
     // Hide the restart button
     restartButton.classList.add('hidden');

@@ -28,8 +28,8 @@ const restartButton = document.getElementById('restart-button');
 function startGame(event) {
     event.preventDefault(); // Stop the form from submitting normally (and refreshing)
 
-    const p1Input = document.getElementById('player-1').value.trim();
-    const p2Input = document.getElementById('player-2').value.trim();
+    const p1Input = document.getElementById('player1').value.trim();
+    const p2Input = document.getElementById('player2').value.trim();
     
     // Set player names, defaulting if inputs are empty
     player1Name = p1Input || 'Player X';

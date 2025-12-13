@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiplayer Tic Tac Toe</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        
-        <div id="setup-screen">
+
+        <!-- Player Input Section -->
+        <div id="player-form">
             <h1>Tic Tac Toe</h1>
-            <form id="name-form">
-                <div>
-                    <label for="player1">Player 1 </label>
-                    <input type="text" id="player1" required placeholder="enter name">
-                </div>
-                <div>
-                    <label for="player2">Player 2:</label>
-                    <input type="text" id="player2" required placeholder="enter name">
-                </div>
-                <button type="submit" id="submit">Start Game</button>
-            </form>
+
+            <div>
+                <label>Player 1</label>
+                <input type="text" id="player1" placeholder="enter name">
+            </div>
+
+            <div>
+                <label>Player 2</label>
+                <input type="text" id="player2" placeholder="enter name">
+            </div>
+
+            <button id="submit">Start Game</button>
         </div>
 
-        <div id="game-screen" class="hidden">
+        <!-- Game Section -->
+        <div id="game" style="display:none;">
             <h1>Tic Tac Toe</h1>
-            
             <div class="message"></div>
-            
-            <div id="board">
+
+            <div class="board">
                 <div class="cell" id="1"></div>
                 <div class="cell" id="2"></div>
                 <div class="cell" id="3"></div>
@@ -40,11 +40,10 @@
                 <div class="cell" id="8"></div>
                 <div class="cell" id="9"></div>
             </div>
-
-            <button id="restart-button" class="hidden">Restart Game</button>
         </div>
+
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>

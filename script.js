@@ -1,7 +1,7 @@
 let player1 = "";
 let player2 = "";
 let currentPlayer = "";
-let currentSymbol = "X";
+let currentSymbol = "x";
 let gameOver = false;
 
 const submitBtn = document.getElementById("submit");
@@ -23,7 +23,7 @@ submitBtn.addEventListener("click", () => {
     gameDiv.style.display = "block";
 
     currentPlayer = player1;
-    currentSymbol = "X";
+    currentSymbol = "x";
     messageDiv.textContent = `${currentPlayer}, you're up`;
 });
 
@@ -34,7 +34,7 @@ cells.forEach(cell => {
         cell.textContent = currentSymbol;
 
         if (checkWinner()) {
-            messageDiv.textContent = `${currentPlayer}, congratulations you won!`;
+            messageDiv.textContent = `${currentPlayer} congratulations you won!`;
             gameOver = true;
             return;
         }
@@ -46,10 +46,10 @@ cells.forEach(cell => {
 function switchPlayer() {
     if (currentPlayer === player1) {
         currentPlayer = player2;
-        currentSymbol = "O";
+        currentSymbol = "o";
     } else {
         currentPlayer = player1;
-        currentSymbol = "X";
+        currentSymbol = "x";
     }
     messageDiv.textContent = `${currentPlayer}, you're up`;
 }
